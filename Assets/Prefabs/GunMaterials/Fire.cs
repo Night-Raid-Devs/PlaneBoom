@@ -5,11 +5,8 @@ using UnityEngine;
 public class Fire : MonoBehaviour {
 
     public GameObject Bullet;
-
     public float BulletForwardForce;
-
     public GameObject BulletEmitter;
-
     public GameObject BulletEmitter2;
 
     private int bulletDelay = 0;
@@ -25,19 +22,22 @@ public class Fire : MonoBehaviour {
 
     void Update()
     {
-        if (bulletDelay <= 0)
+        if (Input.GetKey("space"))
         {
-            bulletDelay = Random.Range(0, 10);
-            if (isFirstGun)
+            if (bulletDelay <= 0)
             {
-                Shoot(BulletEmitter);
+                bulletDelay = Random.Range(0, 10);
+                if (isFirstGun)
+                {
+                    Shoot(BulletEmitter);
+                }
+                else
+                {
+                    Shoot(BulletEmitter2);
+                }
+                isFirstGun = !isFirstGun;
             }
-            else
-            {
-                Shoot(BulletEmitter2);
-            }
-            isFirstGun = !isFirstGun;
+            bulletDelay--;
         }
-        bulletDelay--;
     }
 }

@@ -85,7 +85,7 @@ Transform:
   m_GameObject: {fileID: 1754009001070420}
   m_LocalRotation: {x: 0.50000006, y: 0.49999994, z: 0.49999994, w: 0.50000006}
   m_LocalPosition: {x: -0.037, y: -1.88, z: 0.244}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 4124165274735036}
   - {fileID: 4618406502104070}
@@ -242,7 +242,7 @@ TrailRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
-  m_MotionVectors: 1
+  m_MotionVectors: 0
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
@@ -266,7 +266,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.02
+  m_Time: 0.1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.1
@@ -274,8 +274,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 2
-        time: 0.040145874
-        value: 0.9125061
+        time: 0.018249512
+        value: 0.5000076
         inSlope: 0
         outSlope: 0
         tangentMode: 0

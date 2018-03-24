@@ -4,28 +4,15 @@ using UnityEngine;
 
 public class CameraScroll : MonoBehaviour {
 
-    public Camera myCamera;
-    private int zoom;
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) 
         {
-            zoom = 1;
+            this.transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z + 1);
         }
-        else if (Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        else if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
-            zoom = -1;
+            this.transform.localPosition = new Vector3(this.transform.localPosition.x, this.transform.localPosition.y, this.transform.localPosition.z - 1);
         }
-        else
-        {
-            zoom = 0;
-        }
-
-        myCamera.transform.localPosition = new Vector3(myCamera.transform.localPosition.x, myCamera.transform.localPosition.y, myCamera.transform.localPosition.z + zoom);
     }
 }

@@ -5,27 +5,60 @@ using UnityEngine.UI;
 
 public class BordersScript : MonoBehaviour {
     
-    private int counter = -1;
+    private float counter = -1;
+    public Image loadingImg;
     public Text counterText;
+    public Text warningText;
+
     private float updateTime = 0;
-    Collider obj;
-	
-	void Update () {
+    private Collider obj;
+    private float step = 1;
+
+
+    private void Start()
+    {     
+        loadingImg.enabled = false;
+        warningText.enabled = false;
+    }
+
+    void Update () {
         if (counter != -1)
         {
-            if (updateTime >= 1)
-            {               
-                counterText.text = counter.ToString();
-                counter--;
-                updateTime = 0;
-
-                if (counter == 0)
-                {
-                    Destroy(obj.gameObject);
-                }
+            if (counter < 0)
+            {
+                loadingImg.fillAmount = 0;
+                step = 1;
+                counterText.text = string.Empty;
+                
+                counter = -1;
+                Destroy(obj.gameObject);
             }
+            else
+            {
+                warningText.enabled = true;
+                loadingImg.enabled = true;
+                counter = counter - 0.01f;    
+
+                if (counter >= 0)
+                {
+                    counterText.text = counter.ToString();                
+                }
+                else
+                {
+                    counterText.text = string.Empty;
+                    warningText.enabled = false;
+                }
+                if (step > 0)
+                {
+                    step -= 0.0020f;
+                    loadingImg.fillAmount = step;
+                }
+
+                updateTime = 0;
+            }
+            
             updateTime += Time.deltaTime;
-        }
+        }     
     }
 
     private void OnTriggerExit(Collider other)
@@ -43,6 +76,10 @@ public class BordersScript : MonoBehaviour {
         if (other.gameObject.name == "AircraftJet" && counter != -1)
         {
             counter = -1;
+            step = 1;
+            counterText.text = string.Empty;
+            loadingImg.enabled = false;
+            warningText.enabled = false;
         }
     }
 }

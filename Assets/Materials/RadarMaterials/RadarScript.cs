@@ -9,6 +9,7 @@ public class RadarScript : MonoBehaviour {
     public Transform helpTransform;
     public Transform player;
     public Transform radarCamera;
+    public string findTag = "radar";
     GameObject[] trackedObjects;
     List<GameObject> borderObjects;
 
@@ -48,7 +49,7 @@ public class RadarScript : MonoBehaviour {
     void CreateBorderObjects()
     {
         borderObjects = new List<GameObject>();
-        trackedObjects = GameObject.FindGameObjectsWithTag("radar");
+        trackedObjects = UtilsScript.FindGameObjectsWithTag(findTag);
         foreach (GameObject o in trackedObjects)
         {
             GameObject j = Instantiate(borderPrefab, transform);

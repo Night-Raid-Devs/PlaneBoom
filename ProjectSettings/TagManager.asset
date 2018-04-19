@@ -4,8 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - terrain
   - target
+=======
+>>>>>>> 6394c7f0b5f5169add20c0d484205d0990f88a98
   - radar
   layers:
   - Default

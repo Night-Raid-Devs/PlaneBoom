@@ -7,6 +7,9 @@ TagManager:
   - Collision
   - terrain
   - bombCam
+  - dirt
+  - concrete
+  - radar
   layers:
   - Default
   - TransparentFX
@@ -16,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Radar
+  - Invisible
+  - NoRadar
   - 
   - 
   - 

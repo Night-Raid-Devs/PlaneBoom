@@ -1,2 +1,0 @@
-# PlaneBoom
-Game with planes

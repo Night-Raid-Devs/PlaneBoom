@@ -16,6 +16,7 @@ public class TurretFire : MonoBehaviour
     private void Shoot(GameObject bulletEmitter)
     {
         GameObject bulletHandler = Instantiate(Bullet, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
+        bulletHandler.name = "turretBullet";
         Rigidbody rigidBody = bulletHandler.GetComponent<Rigidbody>();
         rigidBody.AddForce(-bulletEmitter.transform.right * BulletForwardForce);
         Destroy(bulletHandler, 3.0f);

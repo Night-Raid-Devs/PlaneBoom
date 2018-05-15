@@ -9,7 +9,6 @@ public class PlayerHpScript : MonoBehaviour
     public Image healthBG;
 
     public float fullHp = 100;
-    private const float modelRemoveTime = 0.2f;
     private const float deathTime = 0.705f;
 
     private float currentHp;
@@ -26,23 +25,16 @@ public class PlayerHpScript : MonoBehaviour
         objectCollider = GetComponent<Collider>();
     }
 
-    void Update()
-    {
-        if (!isAlive)
-        {
-            if (audioSource.time >= modelRemoveTime)
-            {
-                transform.localScale = new Vector3(0, 0, 0);
-            }
-        }
-    }
-
     private void Die()
     {
         if (isAlive)
         {
             isAlive = false;
-            audioSource.Play();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             healthBG.enabled = false;
             objectCollider.enabled = false;
             Destroy(gameObject, deathTime);
@@ -59,6 +51,15 @@ public class PlayerHpScript : MonoBehaviour
             {
                 this.Die();
             }
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "turretBullet")
+        {
+            this.SetDamage(2);
+            Destroy(collision.gameObject);
         }
     }
 }

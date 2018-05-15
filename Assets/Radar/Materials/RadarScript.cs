@@ -18,13 +18,21 @@ public class RadarScript : MonoBehaviour {
 
     private void LateUpdate()
     {
-        Vector3 newPosition = player.position;
-        newPosition.y = transform.position.y;
-        transform.position = newPosition;
-        radarCamera.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        if (player != null)
+        {
+            Vector3 newPosition = player.position;
+            newPosition.y = transform.position.y;
+            transform.position = newPosition;
+            radarCamera.rotation = Quaternion.Euler(90f, player.eulerAngles.y, 0f);
+        }
 
         for (int i = 0; i < trackedObjects.Length; i++)
         {
+            if (trackedObjects[i] == null)
+            {
+                continue;
+            }
+
             var curr2DPos = new Vector2(trackedObjects[i].transform.position.x, trackedObjects[i].transform.position.z);
             var obj2DPos = new Vector2(transform.position.x, transform.position.z);
             if (Vector2.Distance(curr2DPos, obj2DPos) > switchDistance)

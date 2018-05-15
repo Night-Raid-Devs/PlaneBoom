@@ -11,8 +11,6 @@ public class ObjectHpScript : MonoBehaviour
 
     public float fullHp = 100;
 
-    public float canvasHeight;
-
     private const float modelRemoveTime = 0.2f;
     private const float deathTime = 0.705f;
 
@@ -32,15 +30,7 @@ public class ObjectHpScript : MonoBehaviour
 
     void Update()
     {
-        objectCanvas.transform.localPosition = this.transform.InverseTransformDirection(Camera.main.transform.up * canvasHeight);
-        objectCanvas.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, Camera.main.transform.up);
-        if (!isAlive)
-        {
-            if (audioSource.time >= modelRemoveTime)
-            {
-                transform.localScale = new Vector3(0, 0, 0);
-            }
-        }
+        objectCanvas.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, transform.up);
     }
 
     private void Die()
@@ -48,7 +38,11 @@ public class ObjectHpScript : MonoBehaviour
         if (isAlive)
         {
             isAlive = false;
-            audioSource.Play();
+            if (audioSource != null)
+            {
+                audioSource.Play();
+            }
+
             objectCanvas.enabled = false;
             objectCollider.enabled = false;
             Destroy(gameObject, deathTime);
@@ -65,6 +59,15 @@ public class ObjectHpScript : MonoBehaviour
             {
                 this.Die();
             }
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "playerBullet")
+        {
+            this.SetDamage(2);
+            Destroy(collision.gameObject);
         }
     }
 }

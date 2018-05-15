@@ -41,7 +41,7 @@ public class DropAirBomb : MonoBehaviour {
 
     void Update()
     {
-        if (notDropped && Input.GetMouseButtonDown(0))
+        if (notDropped && Input.GetKeyDown(KeyCode.G))
         {
             notDropped = false;
             var airBomb = GameObject.Find("AirBombPref");

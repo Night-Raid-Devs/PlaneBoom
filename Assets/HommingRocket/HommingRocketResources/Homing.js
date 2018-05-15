@@ -9,14 +9,26 @@ var missileMod : GameObject;
 var SmokePrefab : ParticleSystem;
 var missileClip : AudioClip;
  
-private var target : Transform;
+private var target: Transform;
+private var isNotStarted: boolean = true;
  
 function Start() {
+    var rocketCollider = this.missileMod.GetComponent(typeof(Collider));
+    var playerColliders = GameObject.FindGameObjectsWithTag("playerCollider");
+    for (var collider in playerColliders)
+    {
+        Physics.IgnoreCollision(rocketCollider, collider.GetComponent(typeof(Collider)));
+    }
+
     Fire();
 }
  
 function FixedUpdate() {
-    if (target == null || homingMissile == null)
+    if (isNotStarted) {
+        homingMissile.AddForce(Vector3.down * 100, ForceMode.Impulse);
+    }
+
+    if (target == null)
         return;
 
     homingMissile.velocity = transform.forward * missileVelocity;
@@ -25,7 +37,17 @@ function FixedUpdate() {
 }
  
 function Fire() {
+    var oldEmRate = SmokePrefab.emissionRate;
+    SmokePrefab.emissionRate = 0.0f;
+
+    //var rocketCollider = this.missileMod.GetComponent(typeof(Collider));
+    //rocketCollider.enabled = false;
     yield WaitForSeconds(fuseDelay);
+    isNotStarted = false;
+    //rocketCollider.enabled = true;
+
+    SmokePrefab.emissionRate = oldEmRate;
+
     AudioSource.PlayClipAtPoint(missileClip, transform.position);
 
     var distance = Mathf.Infinity;
@@ -43,8 +65,8 @@ function Fire() {
 function OnCollisionEnter(theCollision: Collision) {
     if (theCollision.gameObject.tag == targetTag) {
         SmokePrefab.emissionRate = 0.0f;
-        Destroy(missileMod.gameObject);
-        yield WaitForSeconds(5);
-        Destroy(gameObject);
+        //Destroy(missileMod.gameObject);
+        //yield WaitForSeconds(5);
+        //Destroy(gameObject);
     }
 }

@@ -11,6 +11,8 @@ TagManager:
   - concrete
   - radar
   - playerCollider
+  - rocket
+  - target
   layers:
   - Default
   - TransparentFX

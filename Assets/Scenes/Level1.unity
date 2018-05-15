@@ -19282,8 +19282,8 @@ GameObject:
   - component: {fileID: 515047886}
   - component: {fileID: 515047889}
   m_Layer: 0
-  m_Name: StaticTarget
-  m_TagString: Untagged
+  m_Name: Turret
+  m_TagString: terrain
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19319,6 +19319,10 @@ MonoBehaviour:
   objectCanvas: {fileID: 468414913}
   healthBar: {fileID: 342708094}
   fullHp: 100
+  explosionLife: 10
+  explosionDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
+  explosionDetailLevel: 10
+  explosionSize: 50
 --- !u!114 &515047887
 MonoBehaviour:
   m_ObjectHideFlags: 0

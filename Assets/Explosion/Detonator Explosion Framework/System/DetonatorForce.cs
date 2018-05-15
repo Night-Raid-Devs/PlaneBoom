@@ -68,6 +68,11 @@ public class DetonatorForce : DetonatorComponent
 					continue;
 				}
 				
+                if (hit.gameObject.name == "Turret")
+                {
+                    hit.GetComponent<ObjectHpScript>().Die();
+                }
+
 				if (hit.GetComponent<Rigidbody>())
 				{
 					//align the force along the object's rotation

@@ -30,7 +30,10 @@ public class ObjectHpScript : MonoBehaviour
 
     void Update()
     {
-        objectCanvas.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, transform.up);
+        if (objectCanvas != null)
+        {
+            objectCanvas.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward, transform.up);
+        }
     }
 
     private void Die()

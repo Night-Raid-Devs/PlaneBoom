@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class PlayerHpScript : MonoBehaviour
 {
     public Image healthBar;
-    public Image healthBG;
 
     public float fullHp = 100;
     private const float deathTime = 0.705f;
@@ -25,19 +24,22 @@ public class PlayerHpScript : MonoBehaviour
         objectCollider = GetComponent<Collider>();
     }
 
-    private void Die()
+    public void Die()
     {
         if (isAlive)
         {
             isAlive = false;
+            currentHp = 0;
+            healthBar.fillAmount = currentHp / fullHp;
+
             if (audioSource != null)
             {
                 audioSource.Play();
             }
 
-            healthBG.enabled = false;
             objectCollider.enabled = false;
-            Destroy(gameObject, deathTime);
+            GetComponent<ExplodeForPlane>().SpawnExplosion();
+            //Destroy(gameObject, deathTime);
         }
     }
 

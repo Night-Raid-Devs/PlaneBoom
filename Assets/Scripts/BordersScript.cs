@@ -28,10 +28,12 @@ public class BordersScript : MonoBehaviour {
             {
                 loadingImg.fillAmount = 0;
                 step = 1;
-                counterText.text = string.Empty;
+
+                warningText.enabled = false;
+                counterText.text = "GAME OVER";
                 
                 counter = -1;
-                Destroy(obj.gameObject);
+                obj.GetComponent<PlayerHpScript>().Die();
             }
             else
             {
@@ -41,12 +43,7 @@ public class BordersScript : MonoBehaviour {
 
                 if (counter >= 0)
                 {
-                    counterText.text = counter.ToString();                
-                }
-                else
-                {
-                    counterText.text = string.Empty;
-                    warningText.enabled = false;
+                    counterText.text = counter.ToString("f1");                
                 }
                 if (step > 0)
                 {

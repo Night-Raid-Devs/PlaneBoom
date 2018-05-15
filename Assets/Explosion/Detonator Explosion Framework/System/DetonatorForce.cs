@@ -63,8 +63,8 @@ public class DetonatorForce : DetonatorComponent
 
 			foreach (Collider hit in _colliders) 
 			{
-				if (!hit)
-				{
+				if (!hit || hit.gameObject.name == "AircraftJet")
+                {
 					continue;
 				}
 				

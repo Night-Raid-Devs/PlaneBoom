@@ -16,6 +16,12 @@ public class Fire : MonoBehaviour {
     {
         GameObject bulletHandler = Instantiate(Bullet, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
         bulletHandler.name = "playerBullet";
+        var playerColliders = GameObject.FindGameObjectsWithTag("playerCollider");
+        foreach (GameObject collider in playerColliders)
+        {
+            Physics.IgnoreCollision(bulletHandler.GetComponent<Collider>(), collider.GetComponent<Collider>());
+        }
+
         Rigidbody rigidBody = bulletHandler.GetComponent<Rigidbody>();
         rigidBody.AddForce(-bulletEmitter.transform.right * BulletForwardForce);
         Destroy(bulletHandler, 3.0f);

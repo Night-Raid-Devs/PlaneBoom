@@ -10,6 +10,7 @@ TagManager:
   - dirt
   - concrete
   - radar
+  - playerCollider
   layers:
   - Default
   - TransparentFX

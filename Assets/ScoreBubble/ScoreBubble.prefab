@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab020b08f48340478c697bff269d79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  addScore: 10
+  addScore: 50
   addTime: 5
 --- !u!135 &135282436737117128
 SphereCollider:

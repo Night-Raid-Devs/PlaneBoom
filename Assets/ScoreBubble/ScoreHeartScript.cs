@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScoreHeartScript : MonoBehaviour {
 
-    public long addScore = 50;
+    public long addScore = 30;
 
     public int addHealth = 10;
 

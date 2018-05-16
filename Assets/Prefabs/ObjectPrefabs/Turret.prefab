@@ -445,7 +445,7 @@ Transform:
   - {fileID: 4355370824978644}
   - {fileID: 4120922784000988}
   m_Father: {fileID: 4826219556479334}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 35, z: 0}
 --- !u!4 &4355370824978644
 Transform:
@@ -480,7 +480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4826219556479334}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4724777410019864
 Transform:
@@ -532,7 +532,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4826219556479334}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4804859488644042
 Transform:
@@ -571,9 +571,9 @@ Transform:
   m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 224953814729495924}
+  - {fileID: 4528643862571534}
   - {fileID: 4326799316443572}
   - {fileID: 4779225542957642}
-  - {fileID: 4528643862571534}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1115,7 +1115,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1108078376767092}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.2, y: 1.2, z: 1.2}
@@ -1241,6 +1241,8 @@ MonoBehaviour:
   BulletForwardForce: 9999
   BulletEmitter: {fileID: 1944612784251484}
   BulletEmitter2: {fileID: 1049749226363376}
+  Target: {fileID: 0}
+  FireDistance: 1500
 --- !u!114 &114406449254998746
 MonoBehaviour:
   m_ObjectHideFlags: 1

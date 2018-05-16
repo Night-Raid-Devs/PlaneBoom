@@ -32,25 +32,27 @@ public class TurretFire : MonoBehaviour
 
     void Update()
     {
-
-        Vector3 targetTransform = Target.transform.position - BulletEmitter.transform.position;
-
-        if (Mathf.Abs(targetTransform.x) < FireDistance && Mathf.Abs(targetTransform.y) < FireDistance && Mathf.Abs(targetTransform.z) < FireDistance)
+        if (Target != null)
         {
-            if (bulletDelay <= 0)
+            Vector3 targetTransform = Target.transform.position - BulletEmitter.transform.position;
+
+            if (Mathf.Abs(targetTransform.x) < FireDistance && Mathf.Abs(targetTransform.y) < FireDistance && Mathf.Abs(targetTransform.z) < FireDistance)
             {
-                bulletDelay = Random.Range(0, 10);
-                if (isFirstGun)
+                if (bulletDelay <= 0)
                 {
-                    Shoot(BulletEmitter);
+                    bulletDelay = Random.Range(0, 10);
+                    if (isFirstGun)
+                    {
+                        Shoot(BulletEmitter);
+                    }
+                    else
+                    {
+                        Shoot(BulletEmitter2);
+                    }
+                    isFirstGun = !isFirstGun;
                 }
-                else
-                {
-                    Shoot(BulletEmitter2);
-                }
-                isFirstGun = !isFirstGun;
+                bulletDelay--;
             }
-            bulletDelay--;
         }
     }
 }

@@ -20,6 +20,7 @@ public class ObjectHpScript : MonoBehaviour
     private AudioSource audioSource;
     private Collider objectCollider;
 
+    private PlayerHpScript playerHpScript;
 
     public float explosionLife = 10;
     public GameObject explosionDetonator;
@@ -31,6 +32,7 @@ public class ObjectHpScript : MonoBehaviour
         currentHp = fullHp;
         audioSource = GetComponent<AudioSource>();
         objectCollider = GetComponent<Collider>();
+        playerHpScript = GameObject.Find("AircraftJet").GetComponent<PlayerHpScript>();
     }
 
     void Update()
@@ -54,6 +56,8 @@ public class ObjectHpScript : MonoBehaviour
             objectCanvas.enabled = false;
             objectCollider.enabled = false;
             SpawnExplosion();
+            playerHpScript.AddScore(100);
+            playerHpScript.AddTime(10);
             Destroy(gameObject, deathTime);
         }
     }

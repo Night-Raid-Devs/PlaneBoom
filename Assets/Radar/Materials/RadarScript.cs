@@ -30,6 +30,11 @@ public class RadarScript : MonoBehaviour {
         {
             if (trackedObjects[i] == null)
             {
+                if (borderObjects[i] != null)
+                {
+                    Destroy(borderObjects[i]);
+                }
+
                 continue;
             }
 

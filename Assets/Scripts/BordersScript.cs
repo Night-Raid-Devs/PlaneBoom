@@ -29,9 +29,7 @@ public class BordersScript : MonoBehaviour {
                 loadingImg.fillAmount = 0;
                 step = 1;
 
-                warningText.enabled = false;
-                counterText.text = "GAME OVER";
-                
+                warningText.enabled = false;    
                 counter = -1;
                 obj.GetComponent<PlayerHpScript>().Die();
             }

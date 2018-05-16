@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: target
-  missileVelocity: 50
+  missileVelocity: 300
   turn: 2
   homingMissile: {fileID: 54854340734337076}
   fuseDelay: 0.2

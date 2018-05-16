@@ -51,4 +51,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d367d87fe69af6f4bbea25bbc234b6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 54854340734337076, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
+  missile: {fileID: 1040386993812156, guid: f35d33ee97983ce4bbdd98d0a5f977db, type: 2}
+  timeFromDestroy: 5
+  Delay: 10

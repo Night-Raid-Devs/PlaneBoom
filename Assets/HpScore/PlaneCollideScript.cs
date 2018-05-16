@@ -6,9 +6,9 @@ public class PlaneCollideScript : MonoBehaviour {
 
     public PlayerHpScript objectToHit;
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.name == "playerBullet")
+        if (collision.gameObject.name == "turretBullet")
         {
             if (objectToHit != null)
             {

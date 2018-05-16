@@ -80,7 +80,7 @@ public class ObjectHpScript : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.name == "playerBullet")
         {

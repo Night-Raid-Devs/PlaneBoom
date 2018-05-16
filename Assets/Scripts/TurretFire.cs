@@ -9,6 +9,8 @@ public class TurretFire : MonoBehaviour
     public float BulletForwardForce;
     public GameObject BulletEmitter;
     public GameObject BulletEmitter2;
+    public GameObject Target;
+    public int FireDistance = 1500;
 
     private int bulletDelay = 0;
     private bool isFirstGun = true;
@@ -17,11 +19,11 @@ public class TurretFire : MonoBehaviour
     {
         GameObject bulletHandler = Instantiate(Bullet, bulletEmitter.transform.position, bulletEmitter.transform.rotation) as GameObject;
         bulletHandler.name = "turretBullet";
-        var playerColliders = GameObject.FindGameObjectsWithTag("playerCollider");
-        foreach (GameObject collider in playerColliders)
-        {
-            Physics.IgnoreCollision(bulletHandler.GetComponent<Collider>(), collider.GetComponent<Collider>());
-        }
+        //var playerColliders = GameObject.FindGameObjectsWithTag("playerCollider");
+        //foreach(GameObject collider in playerColliders)
+        //{
+        //    Physics.IgnoreCollision(bulletHandler.GetComponent<Collider>(), collider.GetComponent<Collider>());
+        //}
 
         Rigidbody rigidBody = bulletHandler.GetComponent<Rigidbody>();
         rigidBody.AddForce(-bulletEmitter.transform.right * BulletForwardForce);
@@ -30,19 +32,25 @@ public class TurretFire : MonoBehaviour
 
     void Update()
     {
-        if (bulletDelay <= 0)
+
+        Vector3 targetTransform = Target.transform.position - BulletEmitter.transform.position;
+
+        if (Mathf.Abs(targetTransform.x) < FireDistance && Mathf.Abs(targetTransform.y) < FireDistance && Mathf.Abs(targetTransform.z) < FireDistance)
         {
-            bulletDelay = Random.Range(0, 10);
-            if (isFirstGun)
+            if (bulletDelay <= 0)
             {
-                Shoot(BulletEmitter);
+                bulletDelay = Random.Range(0, 10);
+                if (isFirstGun)
+                {
+                    Shoot(BulletEmitter);
+                }
+                else
+                {
+                    Shoot(BulletEmitter2);
+                }
+                isFirstGun = !isFirstGun;
             }
-            else
-            {
-                Shoot(BulletEmitter2);
-            }
-            isFirstGun = !isFirstGun;
+            bulletDelay--;
         }
-        bulletDelay--;
     }
 }

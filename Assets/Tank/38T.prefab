@@ -2318,8 +2318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d367d87fe69af6f4bbea25bbc234b6e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  missile: {fileID: 1567551359270320, guid: 02f19038c0ccd7e428167e25fe663613, type: 2}
-  timeFromDestroy: 0.7
+  missile: {fileID: 1206612636463376, guid: 418abadc127eb554490dbee599a20943, type: 2}
+  timeToDestroy: 5
   Delay: 1
 --- !u!114 &114907519065816868
 MonoBehaviour:
@@ -2335,7 +2335,6 @@ MonoBehaviour:
   turret:
   - {fileID: 114986719224777334}
   targetPos: {x: 0, y: 0, z: 0}
-  targetTransform: {fileID: 0}
   turretsIdle: 0
 --- !u!114 &114986719224777334
 MonoBehaviour:

@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 114446806772103726}
   - component: {fileID: 114702392945428286}
   m_Layer: 0
-  m_Name: HommingMissile
+  m_Name: HommingMissileTank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  missileVelocity: 300
+  missileVelocity: 3000
   turn: 0
   homingMissile: {fileID: 54854340734337076}
   fuseDelay: 0

@@ -70,9 +70,8 @@ public class DetonatorForce : DetonatorComponent
 
 			foreach (Collider hit in _colliders) 
 			{
-				if (hit.GetComponent<Rigidbody>())
+				if (hit.GetComponent<Rigidbody>() && hit.name != "AircraftJet")
 				{
-                    Debug.Log("RADIUS: " + radius);
                     //align the force along the object's rotation
                     //this is wrong - need to attenuate the velocity according to distance from the explosion center			
                     //offsetting the explosion force position by the negative of the explosion's direction may help
@@ -93,7 +92,7 @@ public class DetonatorForce : DetonatorComponent
 
                     //fixed 6/15/2013 - didn't work before, was sending message to this script instead :)
                     //Debug.Log("OnDetonatorForceHit " + isPlayerRocket + " " + hit.name);
-					hit.gameObject.SendMessage("OnDetonatorForceHit", isPlayerRocket, SendMessageOptions.DontRequireReceiver);
+                    hit.gameObject.SendMessage("OnDetonatorForceHit", isPlayerRocket, SendMessageOptions.DontRequireReceiver);
 					
 					//and light them on fire for Rune
 					if (fireObject)

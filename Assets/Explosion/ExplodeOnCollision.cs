@@ -7,7 +7,6 @@ public class ExplodeOnCollision : MonoBehaviour {
     public float explosionLife = 10;
     public float detailLevel = 10.0f;
     public float explodeSize = 10;
-    public float radius = 100;
 
     public bool isPlayerRocket;
 
@@ -18,7 +17,6 @@ public class ExplodeOnCollision : MonoBehaviour {
         Detonator dTemp = (Detonator)exp.GetComponent("Detonator");
         dTemp.detail = detailLevel;
         dTemp.size = explodeSize;
-        exp.GetComponent<DetonatorForce>().radius = radius;
         //dTemp.Explode();
         Destroy(exp, explosionLife);
     }

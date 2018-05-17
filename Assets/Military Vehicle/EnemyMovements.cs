@@ -122,7 +122,7 @@ public class EnemyMovements : MonoBehaviour
         target = GameObject.Find("AircraftJet").transform;
         if (useRadius)
         {
-            float cofTop = 100;
+            float cofTop = 50;
             if (name.StartsWith("Heli"))
                 cofTop = 1;
             else if (name.StartsWith("38T"))

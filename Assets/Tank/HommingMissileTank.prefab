@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4569157714299652}
   - component: {fileID: 54854340734337076}
+  - component: {fileID: 114792793368861588}
   - component: {fileID: 114446806772103726}
   - component: {fileID: 114702392945428286}
   m_Layer: 0
@@ -228,7 +229,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734450958838578}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 5.1900005}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4165765933205690}
@@ -393,7 +394,8 @@ MonoBehaviour:
   currentDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
   explosionLife: 10
   detailLevel: 0.8
-  explodeSize: 10
+  explodeSize: 50
+  radius: 100
   isPlayerRocket: 0
 --- !u!114 &114702392945428286
 MonoBehaviour:
@@ -407,13 +409,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: Player
-  missileVelocity: 3000
-  turn: 0
+  missileVelocity: 300
+  turn: 0.5
   homingMissile: {fileID: 54854340734337076}
   fuseDelay: 0
   missileMod: {fileID: 1734450958838578}
   SmokePrefab: {fileID: 198469493749719396}
   missileClip: {fileID: 8300000, guid: 3001a3e6613517848853c1a53e5f0fc0, type: 3}
+--- !u!114 &114792793368861588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1206612636463376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef51ab3f682a9fc40b4eb77f0ba601d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyTime: 5
+  destroyObj: {fileID: 1206612636463376}
 --- !u!136 &136561409470763652
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -423,10 +438,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 9.5
+  m_Radius: 1
+  m_Height: 10.5
   m_Direction: 0
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!198 &198469493749719396
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -7,16 +7,13 @@ public class ExplodeOnCollision : MonoBehaviour {
     public float explosionLife = 10;
     public float detailLevel = 10.0f;
     public float explodeSize = 10;
-    public bool isPlayerRocket;
 
-    private void Start()
-    {
-        currentDetonator.GetComponent<DetonatorForce>().isPlayerRocket = isPlayerRocket;
-    }
+    public bool isPlayerRocket;
 
     private void SpawnExplosion()
     {
         GameObject exp = Instantiate(currentDetonator, transform.position, Quaternion.identity);
+        exp.GetComponent<DetonatorForce>().SetIsPlayerRocket(isPlayerRocket);
         Detonator dTemp = (Detonator)exp.GetComponent("Detonator");
         dTemp.detail = detailLevel;
         dTemp.size = explodeSize;
@@ -28,6 +25,11 @@ public class ExplodeOnCollision : MonoBehaviour {
     {
         if (collision.gameObject.tag == CollisionTag || collision.gameObject.tag == "terrain")
         { 
+            if (gameObject.name.StartsWith("HommingMissile") && collision.gameObject.tag == CollisionTag)
+            {
+                collision.gameObject.GetComponent<PlayerHpScript>().SetDamage(30);
+            }
+
             SpawnExplosion();
             if (name.StartsWith("AirBombPref"))
             {

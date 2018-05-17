@@ -114,7 +114,7 @@ public class EnemyMovements : MonoBehaviour
 
 
     public bool useRadius = false;
-    public float radius = 2000;
+    public float radius = 1000;
     //---Starting/Initializing functions---//
 
     void Start()
@@ -122,10 +122,15 @@ public class EnemyMovements : MonoBehaviour
         target = GameObject.Find("AircraftJet").transform;
         if (useRadius)
         {
-            waypoints[0].localPosition = new Vector3(0, 100, 0);
-            waypoints[1].localPosition = new Vector3(100, 100, radius);
-            waypoints[2].localPosition = new Vector3(-radius, 100, radius);
-            waypoints[3].localPosition = new Vector3(-radius, 100, 100);
+            float cofTop = 50;
+            if (name.StartsWith("Heli"))
+                cofTop = 1;
+            else if (name.StartsWith("38T"))
+                cofTop = 0.01f;
+            waypoints[0].localPosition = new Vector3(0, cofTop, 0);
+            waypoints[1].localPosition = new Vector3(cofTop, cofTop, radius);
+            waypoints[2].localPosition = new Vector3(-radius, cofTop, radius);
+            waypoints[3].localPosition = new Vector3(-radius, cofTop, cofTop);
         }
         
         StartCoroutine(Initialize()); //co-routine is used incase you need to interupt initiialization until something else is done.

@@ -1,21 +1,29 @@
 #pragma strict
-var missile: GameObject;
-private var time = 0.1;
-var timeFromDestroy = 5;
-var Delay = 10;
-private var rocketStarted = false;
-private var clone;
-function Update() {
-    time = time + Time.deltaTime;
+import System.Collections.Generic;
 
-    if (time > Delay && !rocketStarted) {
-       clone = Instantiate(missile, transform.position, transform.rotation);
-        rocketStarted = true;
+private var rocketList = new List.<GameObject>(); // Insert TYPE
+var missile: GameObject;
+private var timeToFire = 0.1f;
+private var timeToDestroyRecket = 0.1f;
+var timeToDestroy = 5.0f;
+var Delay = 10.0f;
+
+function Update() {
+    timeToFire += Time.deltaTime;
+    timeToDestroyRecket += Time.deltaTime;
+
+    if (timeToFire > Delay) {
+
+        rocketList.Add(Instantiate(missile, transform.position, transform.rotation));
+        timeToFire = 0.0;
     }
 
-    if (time > timeFromDestroy + Delay) {
-        Destroy(clone, 1.0);
-        time = 0.0;
-        rocketStarted = false;
+    if (timeToDestroyRecket > timeToDestroy) {
+        if (rocketList.Count > 0) {
+            for (var rocket: GameObject in rocketList) {
+                Destroy(rocket, 1.0);
+            }
+        }
+        timeToDestroyRecket = 0.0;
     }
 }

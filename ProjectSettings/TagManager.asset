@@ -13,6 +13,8 @@ TagManager:
   - playerCollider
   - rocket
   - target
+  - enemy
+  - plRealCollider
   layers:
   - Default
   - TransparentFX

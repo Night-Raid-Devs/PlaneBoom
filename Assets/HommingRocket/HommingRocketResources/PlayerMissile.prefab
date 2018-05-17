@@ -52,8 +52,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4569157714299652}
   - component: {fileID: 54854340734337076}
-  - component: {fileID: 114032109703841996}
   - component: {fileID: 114446806772103726}
+  - component: {fileID: 114014874952677832}
   m_Layer: 0
   m_Name: PlayerMissile
   m_TagString: Untagged
@@ -247,7 +247,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1206612636463376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3149.8176, y: 682.6208, z: 4761.6934}
   m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children:
   - {fileID: 4464034220277960}
@@ -378,7 +378,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114032109703841996
+--- !u!114 &114014874952677832
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -386,10 +386,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206612636463376}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed617baa34d747a479e5de98e8f93131, type: 3}
+  m_Script: {fileID: 11500000, guid: c72aad07bf48fe544a404f9d1e33492e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: target
+  targetTag: enemy
   missileVelocity: 300
   turn: 0.01
   homingMissile: {fileID: 54854340734337076}
@@ -408,10 +408,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3412ecb0a5039d4fb80a1653a57f197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: target
-  currentDetonator: {fileID: 100000, guid: 2a6951ec14b27ed4da27d13818dbebd2, type: 2}
+  CollisionTag: enemy
+  currentDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
   explosionLife: 10
   detailLevel: 0.8
+  explodeSize: 50
+  isPlayerRocket: 1
 --- !u!136 &136561409470763652
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -421,8 +423,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 9.5
+  m_Radius: 1
+  m_Height: 12
   m_Direction: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198469493749719396

@@ -25,6 +25,8 @@ public class DetonatorForce : DetonatorComponent
     public float distanceThreshold = 50f; //threshold in m between playing nearSound and farSound
     private AudioSource _soundComponent;
 
+    public bool isPlayerRocket;
+
     override public void Init()
 	{
         _soundComponent = (AudioSource)gameObject.AddComponent<AudioSource>();
@@ -63,25 +65,28 @@ public class DetonatorForce : DetonatorComponent
 
 			foreach (Collider hit in _colliders) 
 			{
-				if (!hit || hit.gameObject.name == "AircraftJet")
-                {
-					continue;
-				}
-				
-                if (hit.gameObject.name == "Turret")
-                {
-                    hit.GetComponent<ObjectHpScript>().Die();
-                }
-
 				if (hit.GetComponent<Rigidbody>())
 				{
-					//align the force along the object's rotation
-					//this is wrong - need to attenuate the velocity according to distance from the explosion center			
-					//offsetting the explosion force position by the negative of the explosion's direction may help
-					hit.GetComponent<Rigidbody>().AddExplosionForce((power * size), _explosionPosition, (radius * size), (4f * MyDetonator().upwardsBias * size));
-					
-					//fixed 6/15/2013 - didn't work before, was sending message to this script instead :)
-					hit.gameObject.SendMessage("OnDetonatorForceHit", null, SendMessageOptions.DontRequireReceiver);
+                    //align the force along the object's rotation
+                    //this is wrong - need to attenuate the velocity according to distance from the explosion center			
+                    //offsetting the explosion force position by the negative of the explosion's direction may help
+                    if (isPlayerRocket)
+                    {
+                        if (hit.tag != "Player")
+                        {
+                            hit.GetComponent<Rigidbody>().AddExplosionForce((power * size), _explosionPosition, (radius * size), (4f * MyDetonator().upwardsBias * size));
+                        }
+                    }
+                    else
+                    {
+                        if (hit.tag != "enemy")
+                        {
+                            hit.GetComponent<Rigidbody>().AddExplosionForce((power * size), _explosionPosition, (radius * size), (4f * MyDetonator().upwardsBias * size));
+                        }
+                    }
+
+                    //fixed 6/15/2013 - didn't work before, was sending message to this script instead :)
+					hit.gameObject.SendMessage("OnDetonatorForceHit", isPlayerRocket, SendMessageOptions.DontRequireReceiver);
 					
 					//and light them on fire for Rune
 					if (fireObject)

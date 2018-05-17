@@ -31,7 +31,7 @@ public class PlayerHpScript : MonoBehaviour
         gameControlScript = GameObject.Find("Terrain").GetComponent<GameControlScript>();
     }
 
-    public void Die()
+    public void Die(bool isVictory = false)
     {
         if (isAlive)
         {
@@ -45,8 +45,16 @@ public class PlayerHpScript : MonoBehaviour
             }
 
             objectCollider.enabled = false;
-            counterText.text = "GAME OVER";
-            GetComponent<ExplodeForPlane>().SpawnExplosion();
+            if (!isVictory)
+            {
+                counterText.text = "GAME OVER";
+                GetComponent<ExplodeForPlane>().SpawnExplosion(true);
+            }
+            else
+            {
+                counterText.text = "VICTORY!!!";
+                GetComponent<ExplodeForPlane>().SpawnExplosion(false);
+            }
             //Destroy(gameObject, deathTime);
         }
     }
@@ -87,5 +95,13 @@ public class PlayerHpScript : MonoBehaviour
     public void AddTime(int seconds)
     {
         gameControlScript.AddLevelTime(seconds);
+    }
+
+    public void OnDetonatorForceHit(bool isPlayerRocket)
+    {
+        if (!isPlayerRocket)
+        {
+            SetDamage(30);
+        }
     }
 }

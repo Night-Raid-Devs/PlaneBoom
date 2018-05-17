@@ -10,7 +10,7 @@ public class ExplodeForPlane : MonoBehaviour {
     public float explosionLife = 10;
     public float detailLevel = 10.0f;
 
-    public void SpawnExplosion()
+    public void SpawnExplosion(bool isBackToMenu)
     {
         GameObject exp = (GameObject)Instantiate(currentDetonator, transform.position, Quaternion.identity);
         Detonator dTemp = (Detonator)exp.GetComponent("Detonator");
@@ -27,13 +27,24 @@ public class ExplodeForPlane : MonoBehaviour {
 
         var newCam = Instantiate(cam, Camera.main.transform.position, Camera.main.transform.rotation);
         DestroyObject(this.gameObject);
-        newCam.GetComponent<MonoBehaviour>().StartCoroutine(BackToMenu());
+        if (isBackToMenu)
+        {
+            newCam.GetComponent<MonoBehaviour>().StartCoroutine(BackToMenu());
+        }
     }
 
     private IEnumerator BackToMenu()
     {
         yield return new WaitForSecondsRealtime(5);
         SceneManager.LoadScene(0);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "enemy")
+        {
+            GetComponent<PlayerHpScript>().Die();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

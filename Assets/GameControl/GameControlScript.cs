@@ -12,10 +12,31 @@ public class GameControlScript : MonoBehaviour {
     public Text timeText;
     public int levelTimeSeconds = 180;
 
+    public GameObject bubbleObject;
+    public GameObject heartObject;
+
     private void Start()
     {
         levelTime = TimeSpan.FromSeconds(levelTimeSeconds);
         StartCoroutine(LevelTiming());
+
+        for (int i = 0; i < 100; i++)
+        {
+            float x = UnityEngine.Random.Range(1500, 8500);
+            float y = UnityEngine.Random.Range(0, 3500);
+            float z = UnityEngine.Random.Range(1500, 8500);
+
+            Instantiate(bubbleObject, new Vector3(x, y, z), UnityEngine.Random.rotation);
+        }
+
+        for (int i = 0; i < 100; i++)
+        {
+            float x = UnityEngine.Random.Range(1500, 8500);
+            float y = UnityEngine.Random.Range(0, 3500);
+            float z = UnityEngine.Random.Range(1500, 8500);
+
+            Instantiate(heartObject, new Vector3(x, y, z), Quaternion.Euler(new Vector3(0, UnityEngine.Random.Range(0, 360), 0)));
+        }
     }
 
     void Update () {
@@ -48,6 +69,22 @@ public class GameControlScript : MonoBehaviour {
         while (levelTime.TotalSeconds > 0)
         {
             yield return new WaitForSecondsRealtime(1);
+
+            if (GameObject.FindGameObjectsWithTag("enemy").Length == 0)
+            {
+                GameObject.Find("AircraftJet").GetComponent<PlayerHpScript>().Die(true);
+                yield return new WaitForSecondsRealtime(5);
+                int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+                if (sceneIndex < 5)
+                {
+                    SceneManager.LoadScene(sceneIndex + 1);
+                }
+                else
+                {
+                    SceneManager.LoadScene(0);
+                }
+            }
+
             levelTime -= new TimeSpan(0, 0, 1);
             ShowTime();
         }

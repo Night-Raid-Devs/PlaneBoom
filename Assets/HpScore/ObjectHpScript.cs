@@ -92,4 +92,12 @@ public class ObjectHpScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public void OnDetonatorForceHit(bool isPlayerRocket)
+    {
+        if (isPlayerRocket)
+        {
+            SetDamage(100);
+        }
+    }
 }

@@ -25,7 +25,7 @@ public class DetonatorForce : DetonatorComponent
     public float distanceThreshold = 50f; //threshold in m between playing nearSound and farSound
     private AudioSource _soundComponent;
 
-    public bool isPlayerRocket;
+    private bool isPlayerRocket;
 
     override public void Init()
 	{
@@ -46,6 +46,11 @@ public class DetonatorForce : DetonatorComponent
 		}
 	}
 	
+    public void SetIsPlayerRocket(bool isPlayerRocket)
+    {
+        this.isPlayerRocket = isPlayerRocket;
+    }
+
 	private Vector3 _explosionPosition;
     private int _idx;
     override public void Explode()
@@ -86,6 +91,7 @@ public class DetonatorForce : DetonatorComponent
                     }
 
                     //fixed 6/15/2013 - didn't work before, was sending message to this script instead :)
+                    //Debug.Log("OnDetonatorForceHit " + isPlayerRocket + " " + hit.name);
 					hit.gameObject.SendMessage("OnDetonatorForceHit", isPlayerRocket, SendMessageOptions.DontRequireReceiver);
 					
 					//and light them on fire for Rune

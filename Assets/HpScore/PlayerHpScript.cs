@@ -96,12 +96,4 @@ public class PlayerHpScript : MonoBehaviour
     {
         gameControlScript.AddLevelTime(seconds);
     }
-
-    public void OnDetonatorForceHit(bool isPlayerRocket)
-    {
-        if (!isPlayerRocket)
-        {
-            SetDamage(30);
-        }
-    }
 }

@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 136189377454893430}
   m_Layer: 10
   m_Name: BodyLeftCapsule
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 65625052767357630}
   m_Layer: 10
   m_Name: WingLeftBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 136071858328393052}
   m_Layer: 10
   m_Name: NoseCapsule
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -697,6 +697,7 @@ GameObject:
   - component: {fileID: 114797855087720970}
   - component: {fileID: 114908705395319168}
   - component: {fileID: 114223126018864474}
+  - component: {fileID: 114409482140023446}
   m_Layer: 10
   m_Name: AircraftJet
   m_TagString: Player
@@ -732,7 +733,7 @@ GameObject:
   - component: {fileID: 146663630835093540}
   m_Layer: 10
   m_Name: WheelLeft
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +783,7 @@ GameObject:
   - component: {fileID: 146724458457068960}
   m_Layer: 10
   m_Name: WheelFront
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -959,7 +960,7 @@ GameObject:
   - component: {fileID: 136632992390402632}
   m_Layer: 10
   m_Name: BodyCentreCapsule
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,7 +977,7 @@ GameObject:
   - component: {fileID: 65967196638004868}
   m_Layer: 10
   m_Name: TailfinRightBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1009,7 +1010,7 @@ GameObject:
   - component: {fileID: 136550311895621198}
   m_Layer: 10
   m_Name: BodyRightCapsule
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1126,7 +1127,7 @@ GameObject:
   - component: {fileID: 135651290113941562}
   m_Layer: 10
   m_Name: NoseSphere
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1213,7 +1214,7 @@ GameObject:
   - component: {fileID: 65687339775032980}
   m_Layer: 10
   m_Name: WingRightBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1565,7 +1566,7 @@ GameObject:
   - component: {fileID: 65059407427168362}
   m_Layer: 10
   m_Name: AileronLeftBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1614,7 +1615,7 @@ GameObject:
   - component: {fileID: 65610784790836190}
   m_Layer: 10
   m_Name: WingRightBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1662,7 +1663,7 @@ GameObject:
   - component: {fileID: 146149959614769672}
   m_Layer: 10
   m_Name: WheelRight
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1759,7 @@ GameObject:
   - component: {fileID: 65076376794707998}
   m_Layer: 10
   m_Name: TailfinLeftBox
-  m_TagString: Untagged
+  m_TagString: plRealCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2422,7 +2423,7 @@ Transform:
   - {fileID: 4259751527168752}
   - {fileID: 4566594936866314}
   m_Father: {fileID: 4550119411860130}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4379681834401848
 Transform:
@@ -2634,7 +2635,7 @@ Transform:
   - {fileID: 4839027788052960}
   - {fileID: 4583446346823130}
   m_Father: {fileID: 4550119411860130}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4519504186147288
 Transform:
@@ -2653,7 +2654,7 @@ Transform:
   - {fileID: 4075949793086258}
   - {fileID: 4476799827193364}
   m_Father: {fileID: 4550119411860130}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4522146590170282
 Transform:
@@ -2757,10 +2758,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4616224865182578}
-  - {fileID: 4375972191495254}
   - {fileID: 4519504186147288}
   - {fileID: 4765417602005012}
   - {fileID: 4506372423217102}
+  - {fileID: 4375972191495254}
   - {fileID: 4582069615577314}
   - {fileID: 4637978796340954}
   - {fileID: 4025432379775154}
@@ -3209,7 +3210,7 @@ Transform:
   - {fileID: 4370319281317314}
   - {fileID: 4461880799426376}
   m_Father: {fileID: 4550119411860130}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4788282715320698
 Transform:
@@ -5715,8 +5716,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 5, z: 15}
-  m_Center: {x: 0, y: 3, z: 0}
+  m_Size: {x: 18, y: 5, z: 18}
+  m_Center: {x: 0, y: 3, z: 1}
 --- !u!65 &65848087675834030
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -6165,6 +6166,23 @@ MonoBehaviour:
     amount: 30
     type: 0
     originalLocalRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &114409482140023446
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1395411703085008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 675806047891b09489b179ca05fe8866, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 1206612636463376, guid: 0bc3f1e5d7e8d6b4c84717e96dd727cb, type: 2}
+  rockets:
+  - {fileID: 1096440091771658}
+  - {fileID: 1797687596037578}
+  - {fileID: 1710299436875826}
+  - {fileID: 1119490763140824}
 --- !u!114 &114459652092798142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6228,6 +6246,8 @@ MonoBehaviour:
   currentDetonator: {fileID: 100000, guid: dc533b4ca16d3cd4d94b4d9e8b3376f0, type: 2}
   explosionLife: 10
   detailLevel: 10
+  explodeSize: 10
+  isPlayerRocket: 1
 --- !u!114 &114556432753642624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6477,8 +6497,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.19
-  m_Height: 1.4
+  m_Radius: 0.25
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!136 &136530905977308822

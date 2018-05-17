@@ -88,7 +88,7 @@ public class ObjectHpScript : MonoBehaviour
     {
         if (collision.gameObject.name == "playerBullet")
         {
-            this.SetDamage(2);
+            this.SetDamage(5);
             Destroy(collision.gameObject);
         }
     }

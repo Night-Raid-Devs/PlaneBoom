@@ -122,6 +122,7 @@ public class EnemyMovements : MonoBehaviour
         target = GameObject.Find("AircraftJet").transform;
         if (useRadius)
         {
+            waypoints[0].localPosition = new Vector3(0, 100, 0);
             waypoints[1].localPosition = new Vector3(100, 100, radius);
             waypoints[2].localPosition = new Vector3(-radius, 100, radius);
             waypoints[3].localPosition = new Vector3(-radius, 100, 100);
@@ -209,7 +210,10 @@ public class EnemyMovements : MonoBehaviour
 
         }
 
-
+        if (target == null)
+        {
+            return;
+        }
 
         //Functionality Updates
 

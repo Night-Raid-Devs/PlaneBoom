@@ -165,9 +165,10 @@ GameObject:
   - component: {fileID: 114023796425167580}
   - component: {fileID: 65000370040974182}
   - component: {fileID: 114309976473115514}
+  - component: {fileID: 54054157447585694}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: terrain
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -359,7 +360,7 @@ Transform:
   m_Children:
   - {fileID: 4026117637699854}
   m_Father: {fileID: 4870450346621558}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4296336337718506
 Transform:
@@ -427,7 +428,7 @@ Transform:
   m_Children:
   - {fileID: 4296336337718506}
   m_Father: {fileID: 4870450346621558}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4522301649692870
 Transform:
@@ -511,8 +512,8 @@ Transform:
   m_Children:
   - {fileID: 224803635287428208}
   - {fileID: 4686100634212302}
-  - {fileID: 4517302275560360}
   - {fileID: 4254970694240906}
+  - {fileID: 4517302275560360}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -776,6 +777,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1407275465427920}
   m_Mesh: {fileID: 4300004, guid: 6523bfb49685416479dc0842b08eec0a, type: 3}
+--- !u!54 &54054157447585694
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1350129504313310}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65000370040974182
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -803,7 +819,6 @@ MonoBehaviour:
   BulletForwardForce: 30000
   BulletEmitter: {fileID: 1772284653299808}
   BulletEmitter2: {fileID: 1057808775158288}
-  Target: {fileID: 0}
   FireDistance: 2000
 --- !u!114 &114079758679819732
 MonoBehaviour:
@@ -942,7 +957,6 @@ MonoBehaviour:
   turret:
   - {fileID: 114851631346027618}
   targetPos: {x: 0, y: 0, z: 0}
-  targetTransform: {fileID: 0}
   turretsIdle: 0
 --- !u!114 &114851631346027618
 MonoBehaviour:

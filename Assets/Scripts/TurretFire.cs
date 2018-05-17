@@ -9,11 +9,16 @@ public class TurretFire : MonoBehaviour
     public float BulletForwardForce;
     public GameObject BulletEmitter;
     public GameObject BulletEmitter2;
-    public GameObject Target;
     public int FireDistance = 1500;
 
     private int bulletDelay = 0;
     private bool isFirstGun = true;
+    private GameObject Target;
+
+    private void Start()
+    {
+        Target = GameObject.Find("TurretTarget");
+    }
 
     private void Shoot(GameObject bulletEmitter)
     {

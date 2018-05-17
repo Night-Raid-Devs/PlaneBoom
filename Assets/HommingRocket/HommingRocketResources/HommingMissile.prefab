@@ -393,6 +393,7 @@ MonoBehaviour:
   currentDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
   explosionLife: 10
   detailLevel: 0.8
+  explodeSize: 10
   isPlayerRocket: 0
 --- !u!114 &114702392945428286
 MonoBehaviour:
@@ -407,7 +408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTag: Player
   missileVelocity: 300
-  turn: 2
+  turn: 0
   homingMissile: {fileID: 54854340734337076}
   fuseDelay: 0.2
   missileMod: {fileID: 1734450958838578}

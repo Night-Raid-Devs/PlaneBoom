@@ -113,15 +113,21 @@ public class EnemyMovements : MonoBehaviour
 
 
 
-
-
+    public bool useRadius = false;
+    public float radius = 2000;
     //---Starting/Initializing functions---//
 
     void Start()
     {
-
+        target = GameObject.Find("AircraftJet").transform;
+        if (useRadius)
+        {
+            waypoints[1].localPosition = new Vector3(100, 100, radius);
+            waypoints[2].localPosition = new Vector3(-radius, 100, radius);
+            waypoints[3].localPosition = new Vector3(-radius, 100, 100);
+        }
+        
         StartCoroutine(Initialize()); //co-routine is used incase you need to interupt initiialization until something else is done.
-
     }
 
 

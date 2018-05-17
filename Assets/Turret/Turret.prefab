@@ -247,7 +247,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4522301649692870}
-  - component: {fileID: 114079758679819732}
+  - component: {fileID: 114017310937032092}
   m_Layer: 0
   m_Name: midleBarrel
   m_TagString: Untagged
@@ -804,6 +804,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.04, y: 0.04, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114017310937032092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906225161865550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32b447911cac177498e37cd5d3828ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
+  Target: {fileID: 0}
+  Barrel: {fileID: 1906225161865550}
+  Delay: 10
 --- !u!114 &114023796425167580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -816,24 +831,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 1754009001070420, guid: 1238d7a78c761bb4d8089e5a51e41130, type: 2}
-  BulletForwardForce: 30000
+  BulletForwardForce: 10000
   BulletEmitter: {fileID: 1772284653299808}
   BulletEmitter2: {fileID: 1057808775158288}
   FireDistance: 2000
---- !u!114 &114079758679819732
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1906225161865550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d367d87fe69af6f4bbea25bbc234b6e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
-  timeFromDestroy: 5
-  Delay: 10
 --- !u!114 &114283488302650218
 MonoBehaviour:
   m_ObjectHideFlags: 1

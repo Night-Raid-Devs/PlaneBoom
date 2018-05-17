@@ -399,7 +399,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4113177136162488}
-  - component: {fileID: 114752080545456558}
+  - component: {fileID: 114701274174740112}
   m_Layer: 0
   m_Name: midleBarrel
   m_TagString: Untagged
@@ -890,7 +890,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657945952044216}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.000045776367, y: 0.00804883, z: 0.0389}
+  m_LocalPosition: {x: -0.000045776367, y: 0.00804883, z: 0.051}
   m_LocalScale: {x: 0.00038461693, y: 0.00076923403, z: 0.00076923316}
   m_Children: []
   m_Father: {fileID: 4398174804373630}
@@ -2757,7 +2757,7 @@ MonoBehaviour:
   explosionDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
   explosionDetailLevel: 10
   explosionSize: 50
---- !u!114 &114752080545456558
+--- !u!114 &114701274174740112
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2765,11 +2765,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1657945952044216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d367d87fe69af6f4bbea25bbc234b6e8, type: 3}
+  m_Script: {fileID: 11500000, guid: 32b447911cac177498e37cd5d3828ae2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   missile: {fileID: 1206612636463376, guid: 418abadc127eb554490dbee599a20943, type: 2}
-  timeToDestroy: 5
+  Target: {fileID: 0}
+  Barrel: {fileID: 1657945952044216}
   Delay: 1
 --- !u!143 &143047476547008088
 CharacterController:

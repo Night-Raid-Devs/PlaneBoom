@@ -18,7 +18,7 @@ public class ExplodeOnCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == CollisionTag)
+        if (collision.gameObject.tag == CollisionTag || collision.gameObject.tag == "terrain")
         {
             SpawnExplosion();
             var mainCam = Camera.main;

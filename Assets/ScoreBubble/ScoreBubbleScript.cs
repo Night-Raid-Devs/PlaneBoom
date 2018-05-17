@@ -19,6 +19,7 @@ public class ScoreBubbleScript : MonoBehaviour {
         {
             other.gameObject.GetComponent<PlayerHpScript>().AddScore(addScore);
             other.gameObject.GetComponent<PlayerHpScript>().AddTime(addTime);
+            other.gameObject.GetComponent<RocketLauncher>().RechargeRockets();
             Destroy(gameObject);
         }
     }

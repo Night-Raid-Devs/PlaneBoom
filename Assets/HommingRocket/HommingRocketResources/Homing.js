@@ -12,6 +12,7 @@ var missileClip : AudioClip;
 private var target: Transform;
 private var isNotStarted: boolean = true;
  
+
 function Start() {
     var rocketCollider = this.missileMod.GetComponent(typeof(Collider));
     var playerColliders = GameObject.FindGameObjectsWithTag("playerCollider");

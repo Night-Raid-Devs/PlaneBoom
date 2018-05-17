@@ -236,7 +236,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4519504186147288}
-  - component: {fileID: 114991966190476416}
   m_Layer: 0
   m_Name: missile1
   m_TagString: Untagged
@@ -267,7 +266,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4375972191495254}
-  - component: {fileID: 114753480559529726}
   m_Layer: 0
   m_Name: missile4
   m_TagString: Untagged
@@ -1413,7 +1411,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4506372423217102}
-  - component: {fileID: 114533720272498048}
   m_Layer: 0
   m_Name: missile3
   m_TagString: Untagged
@@ -1647,7 +1644,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4765417602005012}
-  - component: {fileID: 114467772858352114}
   m_Layer: 0
   m_Name: missile2
   m_TagString: Untagged
@@ -6181,18 +6177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToHit: {fileID: 114223126018864474}
---- !u!114 &114467772858352114
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1797687596037578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675806047891b09489b179ca05fe8866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
 --- !u!114 &114486359412425130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6229,18 +6213,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minColour: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &114533720272498048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1710299436875826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675806047891b09489b179ca05fe8866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
 --- !u!114 &114550112385163496
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6333,18 +6305,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   raiseAtAltitude: 20
   lowerAtAltitude: 20
---- !u!114 &114753480559529726
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1119490763140824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675806047891b09489b179ca05fe8866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
 --- !u!114 &114797855087720970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6418,18 +6378,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minColour: {r: 0, g: 0, b: 0, a: 0}
---- !u!114 &114991966190476416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1096440091771658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675806047891b09489b179ca05fe8866, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  missile: {fileID: 1206612636463376, guid: ff60d60cc02b3574fa71aaf30c68e328, type: 2}
 --- !u!124 &124178835105482828
 Behaviour:
   m_ObjectHideFlags: 1

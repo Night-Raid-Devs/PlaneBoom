@@ -412,7 +412,8 @@ MonoBehaviour:
   currentDetonator: {fileID: 100000, guid: 5a5dc44bfe769d94ba1bcab91c5c3107, type: 2}
   explosionLife: 10
   detailLevel: 0.8
-  explodeSize: 100
+  explodeSize: 500
+  radius: 100000
   isPlayerRocket: 1
 --- !u!136 &136561409470763652
 CapsuleCollider:

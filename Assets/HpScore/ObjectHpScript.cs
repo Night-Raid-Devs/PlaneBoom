@@ -95,7 +95,7 @@ public class ObjectHpScript : MonoBehaviour
 
     public void OnDetonatorForceHit(bool isPlayerRocket)
     {
-        //Debug.Log("OnDetonatorForceHitHandler " + isPlayerRocket + " " + name);
+        Debug.Log("OnDetonatorForceHitHandler " + isPlayerRocket + " " + name);
         if (isPlayerRocket)
         {
             SetDamage(100);

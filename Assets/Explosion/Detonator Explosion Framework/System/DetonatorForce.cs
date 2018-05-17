@@ -72,6 +72,7 @@ public class DetonatorForce : DetonatorComponent
 			{
 				if (hit.GetComponent<Rigidbody>())
 				{
+                    Debug.Log("RADIUS: " + radius);
                     //align the force along the object's rotation
                     //this is wrong - need to attenuate the velocity according to distance from the explosion center			
                     //offsetting the explosion force position by the negative of the explosion's direction may help

@@ -1743,7 +1743,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!20 &1800640490 stripped
 Camera:
-  m_PrefabParentObject: {fileID: 20613714370035326, guid: 31d02d3e58558ec4597af9a5fa0ee892,
+  m_PrefabParentObject: {fileID: 20684676063518012, guid: 31d02d3e58558ec4597af9a5fa0ee892,
     type: 2}
   m_PrefabInternal: {fileID: 1575624538}
 --- !u!1 &1920956976

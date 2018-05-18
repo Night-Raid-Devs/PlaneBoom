@@ -819,6 +819,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Barrel: {fileID: 1906225161865550}
   Delay: 10
+  FireRange: 2000
 --- !u!114 &114023796425167580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -834,7 +835,7 @@ MonoBehaviour:
   BulletForwardForce: 10000
   BulletEmitter: {fileID: 1772284653299808}
   BulletEmitter2: {fileID: 1057808775158288}
-  FireDistance: 2000
+  FireDistance: 1500
 --- !u!114 &114283488302650218
 MonoBehaviour:
   m_ObjectHideFlags: 1

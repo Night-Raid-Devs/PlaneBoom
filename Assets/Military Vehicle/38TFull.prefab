@@ -929,7 +929,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070703324787168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3043.8496, y: 681.9874, z: 4561.46}
+  m_LocalPosition: {x: 3043.072, y: 681.9874, z: 4530.5566}
   m_LocalScale: {x: 1500, y: 1500, z: 1500}
   m_Children:
   - {fileID: 4792841116583156}
@@ -2772,6 +2772,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Barrel: {fileID: 1657945952044216}
   Delay: 1
+  FireRange: 1500
 --- !u!143 &143047476547008088
 CharacterController:
   m_ObjectHideFlags: 1

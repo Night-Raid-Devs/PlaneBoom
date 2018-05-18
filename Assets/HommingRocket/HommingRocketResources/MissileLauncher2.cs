@@ -5,14 +5,19 @@ using UnityEngine;
 public class MissileLauncher2 : MonoBehaviour {
 
     public GameObject missile;
-    public GameObject Target;
     public GameObject Barrel;
     public float Delay = 10.0f;
+    public float FireRange = 2000f;
 
-    float FireRange = 2000f;
+    private GameObject Target;
     float timeToFire = 0.1f;
-   
-	void Update () {
+
+    void Start()
+    {
+        Target = GameObject.Find("AircraftJet");
+    }
+
+    void Update () {
         timeToFire += Time.deltaTime;
 
         Vector3 targetTransform = Target.transform.position - Barrel.transform.position;

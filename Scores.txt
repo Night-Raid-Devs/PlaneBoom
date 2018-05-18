@@ -1,0 +1,1 @@
+{"Scores":[{"NickName":"Stas","Value":10000.0,"Level":3},{"NickName":"Anya","Value":1000.0,"Level":1}]}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHpScript : MonoBehaviour
@@ -47,12 +48,16 @@ public class PlayerHpScript : MonoBehaviour
             objectCollider.enabled = false;
             if (!isVictory)
             {
-                counterText.text = "GAME OVER";
+                counterText.text = "ПОТРАЧЕНО";
                 GetComponent<ExplodeForPlane>().SpawnExplosion(true);
             }
             else
             {
-                counterText.text = "VICTORY!!!";
+                PlayerPrefs.SetString("rnick", PlayerPrefs.GetString("nick", ""));
+                PlayerPrefs.SetInt("rlevel", SceneManager.GetActiveScene().buildIndex);
+                PlayerPrefs.SetFloat("rvalue", currentScore);
+
+                counterText.text = "ПОБЕДА!!!";
                 GetComponent<ExplodeForPlane>().SpawnExplosion(false);
             }
             //Destroy(gameObject, deathTime);

@@ -43,7 +43,7 @@ public class GameControlScript : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.F2))
         {
             int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-            if (sceneIndex < 5)
+            if (sceneIndex < 3)
             {
                 SceneManager.LoadScene(sceneIndex + 1);
             }
@@ -75,7 +75,7 @@ public class GameControlScript : MonoBehaviour {
                 GameObject.Find("AircraftJet").GetComponent<PlayerHpScript>().Die(true);
                 yield return new WaitForSecondsRealtime(5);
                 int sceneIndex = SceneManager.GetActiveScene().buildIndex;
-                if (sceneIndex < 5)
+                if (sceneIndex < 3)
                 {
                     SceneManager.LoadScene(sceneIndex + 1);
                 }

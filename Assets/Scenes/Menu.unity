@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start Game
+  m_Text: "\u0418\u0433\u0440\u0430\u0442\u044C"
 --- !u!222 &1142402747
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1091,7 +1091,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play level 3
+  m_Text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 3"
 --- !u!222 &1201022897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1250,7 +1250,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play level 2
+  m_Text: "\u0423\u0440\u043E\u0432\u0435\u043D\u044C 2"
 --- !u!222 &1421324945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1328,7 +1328,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Records
+  m_Text: "\u0420\u0435\u043A\u043E\u0440\u0434\u044B"
 --- !u!222 &1450737575
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1619,7 +1619,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Instructions
+  m_Text: "\u0418\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u044F"
 --- !u!222 &1621440544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1851,6 +1851,7 @@ GameObject:
   - component: {fileID: 1888703175}
   - component: {fileID: 1888703174}
   - component: {fileID: 1888703178}
+  - component: {fileID: 1888703179}
   m_Layer: 5
   m_Name: MenuCanvas
   m_TagString: Untagged
@@ -1957,6 +1958,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputNick: {fileID: 1032124128}
+--- !u!114 &1888703179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1888703173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a59648205d9fc34693ed11bb24ab549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textNickname: {fileID: 0}
+  textLevel: {fileID: 0}
+  textDate: {fileID: 0}
+  textScore: {fileID: 0}
 --- !u!1 &1895300796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Quit
+  m_Text: "\u0412\u044B\u0445\u043E\u0434"
 --- !u!222 &1895300799
 CanvasRenderer:
   m_ObjectHideFlags: 0

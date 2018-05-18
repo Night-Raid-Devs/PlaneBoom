@@ -6,7 +6,8 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Scores : MonoBehaviour {
+public class Scores : MonoBehaviour
+{
 
     private const string filename = "Scores.txt";
 
@@ -46,8 +47,8 @@ public class Scores : MonoBehaviour {
             result = (ScoreList)(JsonUtility.FromJson<ScoreList>(line)) == null ? new List<Score>() : JsonUtility.FromJson<ScoreList>(line).Scores;
         }
 
-       // result.Add(new Score() { NickName = "Anna", Level = 1, Value = 1001, Time = DateTime.Now });
-       // result.Add(new Score() { NickName = "Stas", Level = 2, Value = 2500, Time = DateTime.Now });
+        // result.Add(new Score() { NickName = "Anna", Level = 1, Value = 1001, Time = DateTime.Now });
+        // result.Add(new Score() { NickName = "Stas", Level = 2, Value = 2500, Time = DateTime.Now });
         string nicknames = "",
                levels = "",
                dates = "",
@@ -69,10 +70,10 @@ public class Scores : MonoBehaviour {
 
     public void AddNewScore(string nickName, float value, int level)
     {
-        ScoreList scopes = new ScoreList()
+        ScoreList scores = new ScoreList()
         {
             Scores = new List<Score>()
-    };
+        };
 
         if (!File.Exists(filename))
         {
@@ -82,7 +83,15 @@ public class Scores : MonoBehaviour {
         using (StreamReader sr = new StreamReader(filename))
         {
             string line = sr.ReadToEnd();
-            scopes = JsonUtility.FromJson<ScoreList>(line);
+            scores = JsonUtility.FromJson<ScoreList>(line);
+        }
+
+        if (scores == null)
+        {
+            scores = new ScoreList()
+            {
+                Scores = new List<Score>()
+            };
         }
 
         var scope = new Score()
@@ -93,22 +102,16 @@ public class Scores : MonoBehaviour {
             Level = level
         };
 
-        scopes.Scores.Add(scope);
-        scopes.Scores.Sort((a, b) => { return b.Value.CompareTo(a.Value); });
+        scores.Scores.Add(scope);
+        scores.Scores.Sort((a, b) => { return b.Value.CompareTo(a.Value); });
 
         using (StreamWriter sw = new StreamWriter(filename, false))
         {
-            string line = JsonUtility.ToJson(scopes);
+            string line = JsonUtility.ToJson(scores);
             sw.WriteLine(line);
         }
 
-        Debug.Log("ADD SCOPE");
-        Debug.Log(JsonUtility.ToJson(scopes));
-    }
-
-
-    // Use this for initialization
-    void Start () {
-        GetScores();
+        Debug.Log("ADD SCORE");
+        Debug.Log(JsonUtility.ToJson(scores));
     }
 }

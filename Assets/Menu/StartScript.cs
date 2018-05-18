@@ -13,5 +13,11 @@ public class StartScript : MonoBehaviour {
         {
             inputNick.text = "Player" + Random.Range(1, 100);
         }
+
+        if (PlayerPrefs.GetInt("rlevel", -1) != -1)
+        {
+            GetComponent<Scores>().AddNewScore(PlayerPrefs.GetString("rnick"), PlayerPrefs.GetInt("rvalue"), PlayerPrefs.GetInt("rlevel"));
+            PlayerPrefs.SetInt("rlevel", -1);
+        }
     }
 }

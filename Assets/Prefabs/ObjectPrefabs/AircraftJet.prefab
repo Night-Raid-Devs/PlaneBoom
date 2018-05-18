@@ -2787,7 +2787,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1395411703085008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3153, y: 811.15, z: 4849.29}
+  m_LocalPosition: {x: 3290, y: 811.15, z: 3815}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4616224865182578}
@@ -6319,7 +6319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3412ecb0a5039d4fb80a1653a57f197, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: terrain
+  CollisionTag: enemy
   currentDetonator: {fileID: 100000, guid: dc533b4ca16d3cd4d94b4d9e8b3376f0, type: 2}
   explosionLife: 10
   detailLevel: 10

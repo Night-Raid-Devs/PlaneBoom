@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48154742, g: 0.48959196, b: 0.49746627, a: 1}
+  m_IndirectSpecularColor: {r: 0.48153275, g: 0.48960346, b: 0.4974224, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -641,6 +641,16 @@ Prefab:
         type: 2}
       propertyPath: FireRange
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 114656149829984618, guid: efcc90672a6d48643acb6f2569dfe257,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 143047476547008088, guid: efcc90672a6d48643acb6f2569dfe257,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: efcc90672a6d48643acb6f2569dfe257, type: 2}
@@ -1258,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeText: {fileID: 1021588977}
-  levelTimeSeconds: 180
+  levelTimeSeconds: 360
   bubbleObject: {fileID: 317483601}
   heartObject: {fileID: 1053145735}
 --- !u!1001 &633043126

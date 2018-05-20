@@ -12,7 +12,7 @@ public class PlaneCollideScript : MonoBehaviour {
         {
             if (objectToHit != null)
             {
-                objectToHit.SetDamage(1.5f);
+                objectToHit.SetDamage(2);
             }
 
             Destroy(collision.gameObject);
